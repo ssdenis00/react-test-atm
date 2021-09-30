@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/react-test-atm/static/css/main.7905f339.chunk.css",
+    "main.js": "/react-test-atm/static/js/main.168bc644.chunk.js",
+    "main.js.map": "/react-test-atm/static/js/main.168bc644.chunk.js.map",
+    "runtime-main.js": "/react-test-atm/static/js/runtime-main.c203bd2c.js",
+    "runtime-main.js.map": "/react-test-atm/static/js/runtime-main.c203bd2c.js.map",
+    "static/js/2.31cc9dad.chunk.js": "/react-test-atm/static/js/2.31cc9dad.chunk.js",
+    "static/js/2.31cc9dad.chunk.js.map": "/react-test-atm/static/js/2.31cc9dad.chunk.js.map",
+    "index.html": "/react-test-atm/index.html",
+    "static/css/main.7905f339.chunk.css.map": "/react-test-atm/static/css/main.7905f339.chunk.css.map",
+    "static/js/2.31cc9dad.chunk.js.LICENSE.txt": "/react-test-atm/static/js/2.31cc9dad.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/react-test-atm/static/media/help.d9ed9bec.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c203bd2c.js",
+    "static/js/2.31cc9dad.chunk.js",
+    "static/css/main.7905f339.chunk.css",
+    "static/js/main.168bc644.chunk.js"
+  ]
+}
