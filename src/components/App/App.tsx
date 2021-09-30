@@ -81,6 +81,7 @@ function App() {
     } else {
       renderResultAtm(iWantToGet(parseInt(inputValue), limits));
       changeLimits(iWantToGet(parseInt(inputValue), limits));
+      setInputValue("");
     }
   }
 
@@ -96,10 +97,12 @@ function App() {
   function changeLimits(result: iObjectWithKeys | undefined) {
     let cloneLimits = JSON.parse(JSON.stringify(limits));
 
-    for (let key in cloneLimits) {
-      const keyInt = parseInt(key);
-      if (result[keyInt]) {
-        cloneLimits[keyInt] = cloneLimits[keyInt] - parseInt(result[keyInt]);
+    if (result !== undefined) {
+      for (let key in cloneLimits) {
+        const keyInt = parseInt(key);
+        if (result[keyInt]) {
+          cloneLimits[keyInt] = cloneLimits[keyInt] - parseInt(result[keyInt]);
+        }
       }
     }
     setLimits(cloneLimits);
@@ -115,8 +118,8 @@ function App() {
     });
   }
 
-  function handlePresetButton(evt) {
-    switch (evt.target.value) {
+  function handlePresetButton(value: string) {
+    switch (value) {
       case "1":
         setLimits({
           "5000": "100",
@@ -192,7 +195,9 @@ function App() {
         <li className="presets__item">
           <button
             type="button"
-            onClick={handlePresetButton}
+            onClick={() => {
+              handlePresetButton("1");
+            }}
             className="presets__btn"
             value="1"
           >
@@ -202,7 +207,9 @@ function App() {
         <li className="presets__item">
           <button
             type="button"
-            onClick={handlePresetButton}
+            onClick={() => {
+              handlePresetButton("2");
+            }}
             className="presets__btn"
             value="2"
           >
@@ -212,7 +219,9 @@ function App() {
         <li className="presets__item">
           <button
             type="button"
-            onClick={handlePresetButton}
+            onClick={() => {
+              handlePresetButton("3");
+            }}
             className="presets__btn"
             value="3"
           >
@@ -222,7 +231,9 @@ function App() {
         <li className="presets__item">
           <button
             type="button"
-            onClick={handlePresetButton}
+            onClick={() => {
+              handlePresetButton("4");
+            }}
             className="presets__btn"
             value="4"
           >
@@ -232,7 +243,9 @@ function App() {
         <li className="presets__item">
           <button
             type="button"
-            onClick={handlePresetButton}
+            onClick={() => {
+              handlePresetButton("5");
+            }}
             className="presets__btn"
             value="5"
           >
@@ -242,7 +255,9 @@ function App() {
         <li className="presets__item">
           <button
             type="button"
-            onClick={handlePresetButton}
+            onClick={() => {
+              handlePresetButton("6");
+            }}
             className="presets__btn"
             value="6"
           >
@@ -260,7 +275,7 @@ function App() {
         <input
           type="number"
           className="form__input"
-          value={inputValue}
+          value={inputValue || ""}
           onChange={handleInputChange}
         />
         <button className="form__btn" type="submit">

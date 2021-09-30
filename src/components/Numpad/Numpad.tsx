@@ -1,4 +1,4 @@
-import { useEffect, useState, MouseEvent } from "react";
+import { useEffect, useState } from "react";
 import "./Numpad.css";
 
 interface iNumpad {
@@ -10,14 +10,13 @@ function Numpad({ inputValue, setInputValue }: iNumpad) {
   const [numpadNumber, setNumpadNumber] = useState<string[]>([]);
 
   useEffect(() => {
-    console.log(numpadNumber);
     setInputValue(numpadNumber.join(""));
   }, [numpadNumber, setInputValue]);
 
-  function handlerNumberButton(evt: MouseEvent<HTMLElement>) {
+  function handlerNumberButton(value: string) {
     setNumpadNumber(inputValue.split(""));
     setNumpadNumber((state) => {
-      return [...state, evt.target.value];
+      return [...state, value];
     });
   }
 
@@ -33,9 +32,10 @@ function Numpad({ inputValue, setInputValue }: iNumpad) {
       <li className="numpad__item">
         <button
           type="button"
-          onClick={handlerNumberButton}
+          onClick={() => {
+            handlerNumberButton("1");
+          }}
           className="numpad__btn"
-          value="1"
         >
           1
         </button>
@@ -43,9 +43,10 @@ function Numpad({ inputValue, setInputValue }: iNumpad) {
       <li className="numpad__item">
         <button
           type="button"
-          onClick={handlerNumberButton}
+          onClick={() => {
+            handlerNumberButton("2");
+          }}
           className="numpad__btn"
-          value="2"
         >
           2
         </button>
@@ -53,9 +54,10 @@ function Numpad({ inputValue, setInputValue }: iNumpad) {
       <li className="numpad__item">
         <button
           type="button"
-          onClick={handlerNumberButton}
+          onClick={() => {
+            handlerNumberButton("3");
+          }}
           className="numpad__btn"
-          value="3"
         >
           3
         </button>
@@ -63,9 +65,10 @@ function Numpad({ inputValue, setInputValue }: iNumpad) {
       <li className="numpad__item">
         <button
           type="button"
-          onClick={handlerNumberButton}
+          onClick={() => {
+            handlerNumberButton("4");
+          }}
           className="numpad__btn"
-          value="4"
         >
           4
         </button>
@@ -73,9 +76,10 @@ function Numpad({ inputValue, setInputValue }: iNumpad) {
       <li className="numpad__item">
         <button
           type="button"
-          onClick={handlerNumberButton}
+          onClick={() => {
+            handlerNumberButton("5");
+          }}
           className="numpad__btn"
-          value="5"
         >
           5
         </button>
@@ -83,9 +87,10 @@ function Numpad({ inputValue, setInputValue }: iNumpad) {
       <li className="numpad__item">
         <button
           type="button"
-          onClick={handlerNumberButton}
+          onClick={() => {
+            handlerNumberButton("6");
+          }}
           className="numpad__btn"
-          value="6"
         >
           6
         </button>
@@ -93,9 +98,10 @@ function Numpad({ inputValue, setInputValue }: iNumpad) {
       <li className="numpad__item">
         <button
           type="button"
-          onClick={handlerNumberButton}
+          onClick={() => {
+            handlerNumberButton("7");
+          }}
           className="numpad__btn"
-          value="7"
         >
           7
         </button>
@@ -103,9 +109,10 @@ function Numpad({ inputValue, setInputValue }: iNumpad) {
       <li className="numpad__item">
         <button
           type="button"
-          onClick={handlerNumberButton}
+          onClick={() => {
+            handlerNumberButton("8");
+          }}
           className="numpad__btn"
-          value="8"
         >
           8
         </button>
@@ -113,26 +120,24 @@ function Numpad({ inputValue, setInputValue }: iNumpad) {
       <li className="numpad__item">
         <button
           type="button"
-          onClick={handlerNumberButton}
+          onClick={() => {
+            handlerNumberButton("9");
+          }}
           className="numpad__btn"
-          value="9"
         >
           9
         </button>
       </li>
       <li className="numpad__item">
-        <button
-          type="button"
-          onClick={handlerNumberButton}
-          className="numpad__btn"
-        ></button>
+        <button type="button" className="numpad__btn" disabled={true}></button>
       </li>
       <li className="numpad__item">
         <button
           type="button"
-          onClick={handlerNumberButton}
+          onClick={() => {
+            handlerNumberButton("0");
+          }}
           className="numpad__btn"
-          value="0"
         >
           0
         </button>

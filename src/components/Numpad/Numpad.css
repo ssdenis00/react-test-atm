@@ -29,3 +29,7 @@
   height: 100%;
   font-size: 26px;
 }
+
+.numpad__btn:disabled {
+  cursor: default;
+}
