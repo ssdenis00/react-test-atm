@@ -1,0 +1,10 @@
+.banknotes__item {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: center;
+}
+
+.banknotes__title {
+  font-size: 18px;
+}

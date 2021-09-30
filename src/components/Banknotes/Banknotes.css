@@ -1,0 +1,21 @@
+.banknotes {
+  visibility: hidden;
+  opacity: 0;
+  background: rgb(247, 243, 243);
+  position: absolute;
+  list-style: none;
+  margin: 50px 0 0;
+  padding: 0;
+  border-radius: 15px;
+  border: 1px solid #000;
+  width: 100%;
+  max-width: 350px;
+  padding: 10px 25px;
+  box-sizing: border-box;
+}
+
+.banknotes_active {
+  visibility: visible;
+  opacity: 100;
+  transition: opacity 0.3s ease-in-out;
+}

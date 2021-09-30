@@ -1,0 +1,104 @@
+.App {
+  font-family: "Arial", sans-serif;
+}
+
+.presets {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  max-width: 350px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.presets__btn {
+  cursor: pointer;
+  border-radius: 5px;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.presets__btn:hover {
+  opacity: 0.7;
+}
+
+.form {
+  display: flex;
+  justify-content: space-between;
+  max-width: 350px;
+  width: 100%;
+  gap: 15px;
+  border: 1px solid #000;
+  padding: 10px 25px;
+  box-sizing: border-box;
+  margin: 60px auto 0;
+}
+
+.form__input {
+  border-radius: 5px;
+  padding: 5px 10px;
+  box-sizing: border-box;
+  -moz-appearance: textfield;
+}
+
+.form__input::-webkit-outer-spin-button,
+.form__input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.form__input:hover,
+.form__input:focus {
+  -moz-appearance: number-input;
+}
+
+.form__btn {
+  border-radius: 15px;
+  cursor: pointer;
+  padding: 10px 15px;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.form__btn:hover {
+  opacity: 0.7;
+}
+
+.result {
+  display: flex;
+  justify-content: space-between;
+  max-width: 350px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 15px 0;
+  box-sizing: border-box;
+}
+
+.result__banknotes {
+  position: relative;
+}
+
+.result__banknotes-btn {
+  position: relative;
+  z-index: 11;
+  display: block;
+  width: 42px;
+  height: 42px;
+  background: center / contain url("../../images/help.svg") no-repeat;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.result__banknotes-btn:hover {
+  transform: scale(1.2, 1.2);
+}
+
+.result__banknotes-btn:focus {
+  border: none;
+}
+
+.result__banknotes-btn:active {
+  border: none;
+}
